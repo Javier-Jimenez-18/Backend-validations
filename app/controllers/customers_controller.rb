@@ -46,7 +46,7 @@ class CustomersController < ApplicationController
     # create Method with Error Handling:
     # If @customer.save return non-nil values, that means they succeeded,
     # and we can redirect back to the show page with a success message.
-    # If they return nil, we have the else processing: 
+    # If they return nil, we have the else processing:
     # First collect the error and put it in the flash.now.alert
     # Then do the render, which basically means put the previous screen back up.
     @customer = Customer.new(customer_params)
