@@ -4,6 +4,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Customer ID:</strong>
+  <%= @order.customer_id %>
+</p>
+
+<p>
   <strong>Product Name:</strong>
   <%= @order.product_name %>
 </p>
@@ -13,10 +18,5 @@
   <%= @order.product_count %>
 </p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @order.customer %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@customer) %> |
+<%= link_to 'Edit', edit_orders_path %>
 <%= link_to 'Back', orders_path %>
