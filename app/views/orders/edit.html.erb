@@ -1,9 +1,4 @@
-<h1>Orders#edit</h1>
-<p>Find me in app/views/orders/edit.html.erb</p>
-
 <%= render 'form', order: @order %>
 
 <%= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>
-
-<%= f.collection_select :customer_id, Customer.all, :id, :full_name, include_blank: true %>

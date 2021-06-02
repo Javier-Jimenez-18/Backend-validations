@@ -3,5 +3,5 @@ class Order < ApplicationRecord
 
   validates :product_name, presence: true
   validates :product_count, presence: true
-  validates_associated :customer
+  validates_presence_of :customer
 end
