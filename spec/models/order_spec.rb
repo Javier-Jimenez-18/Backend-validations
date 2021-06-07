@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Order, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
+
   subject { Order.new( product_name: "gears", product_count: 7, customer: FactoryBot.create(:customer) ) }
   it "is valid with valid attributes" do
     expect(subject).to be_valid
@@ -11,12 +12,17 @@ RSpec.describe Order, type: :model do
     expect(subject).to_not be_valid
   end
   it "is not valid if it does not have a customer first name" do
-    subject.customer.first_name=nil
-    expect(subject).to_not be_valid
+     subject.customer.first_name=nil
+     expect(subject.customer).to_not be_valid
   end
   it "is not valid if it does not have a customer last name" do
-    subject.customer.last_name=nil
-    expect(subject).to_not be_valid
+     subject.customer.last_name=nil
+     expect(subject.customer).to_not be_valid
+  end
+  it "is not valid if it does not have a customer first and last name" do
+     subject.customer.first_name=nil
+     subject.customer.last_name=nil
+     expect(subject.customer).to_not be_valid
   end
   it "is not valid if it does not have a product name" do
     subject.product_name=nil
